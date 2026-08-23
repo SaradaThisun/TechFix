@@ -4,12 +4,12 @@ plugins {
 
 android {
     namespace = "com.example.techtrack"
-    compileSdk = 35
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.example.techtrack"
         minSdk = 24
-        targetSdk = 35
+        targetSdk = 36
         versionCode = 1
         versionName = "1.0"
 
@@ -48,5 +48,4 @@ dependencies {
     implementation("androidx.camera:camera-lifecycle:1.3.4")
     implementation("androidx.camera:camera-view:1.3.4")
     implementation("com.google.android.gms:play-services-location:21.3.0")
-
 }
