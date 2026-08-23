@@ -39,8 +39,7 @@ public class LoginActivity extends AppCompatActivity {
         btnGoogle.setOnClickListener(v -> attemptLogin());
 
         tvCreateAccount.setOnClickListener(v -> {
-            // TODO: replace with RegisterActivity once it's built
-            startActivity(new Intent(LoginActivity.this, MainActivity.class));
+            startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
         });
 
         tvForgot.setOnClickListener(v ->
