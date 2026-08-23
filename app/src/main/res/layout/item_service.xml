@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/bg_card_xl"
+    android:padding="16dp"
+    android:layout_marginBottom="12dp"
+    android:elevation="2dp">
+
+    <!-- Top row: category badge + popular -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="horizontal" android:gravity="center_vertical"
+        android:layout_marginBottom="8dp">
+
+        <TextView android:id="@+id/tvCategory"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Screen Replace" android:textSize="11sp" android:textStyle="bold"
+            android:background="@drawable/bg_pill_accent"
+            android:paddingHorizontal="10dp" android:paddingVertical="4dp" />
+
+        <View android:layout_width="0dp" android:layout_height="0dp" android:layout_weight="1" />
+
+        <TextView android:id="@+id/tvPopular"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="🔥 Popular" android:textColor="@color/warning"
+            android:textSize="11sp" android:textStyle="bold"
+            android:background="@drawable/bg_warning"
+            android:paddingHorizontal="8dp" android:paddingVertical="3dp"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <TextView android:id="@+id/tvTitle"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:text="iPhone OLED Display Replacement"
+        android:textColor="@color/text" android:textSize="15sp" android:textStyle="bold"
+        android:layout_marginBottom="4dp" />
+
+    <TextView android:id="@+id/tvDescription"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:text="Factory-grade OLED panel with TrueTone restoration."
+        android:textColor="@color/text_dim" android:textSize="13sp" android:lineSpacingExtra="2dp"
+        android:layout_marginBottom="10dp" />
+
+    <!-- Service image -->
+    <ImageView android:id="@+id/ivServiceImage"
+        android:layout_width="match_parent" android:layout_height="140dp"
+        android:scaleType="centerCrop"
+        android:background="@color/bg_alt"
+        android:layout_marginBottom="10dp" />
+
+    <!-- Meta badges -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="horizontal" android:layout_marginBottom="10dp">
+
+        <TextView android:id="@+id/tvTime"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="⏱ 45 - 60 Mins" android:textColor="@color/text_dim"
+            android:textSize="11sp" android:background="@color/bg_alt"
+            android:paddingHorizontal="8dp" android:paddingVertical="4dp"
+            android:layout_marginEnd="8dp" />
+
+        <TextView android:id="@+id/tvWarranty"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="🛡 90d Warranty" android:textColor="@color/success"
+            android:textSize="11sp" android:background="@drawable/bg_success"
+            android:paddingHorizontal="8dp" android:paddingVertical="4dp" />
+    </LinearLayout>
+
+    <!-- Footer: price + book button -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="horizontal" android:gravity="center_vertical"
+        android:paddingTop="10dp"
+        android:background="@drawable/bg_divider_top">
+
+        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1" android:orientation="vertical">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Starting From" android:textColor="@color/text_dim" android:textSize="11sp" />
+            <TextView android:id="@+id/tvPrice"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Rs. 18,500" android:textColor="@color/accent"
+                android:textSize="20sp" android:textStyle="bold" />
+        </LinearLayout>
+
+        <Button android:id="@+id/btnBook"
+            android:layout_width="wrap_content" android:layout_height="44dp"
+            android:text="Book Now →"
+            android:textColor="@color/white" android:textSize="13sp" android:textStyle="bold"
+            android:background="@drawable/bg_btn_primary" android:paddingHorizontal="16dp" />
+    </LinearLayout>
+</LinearLayout>

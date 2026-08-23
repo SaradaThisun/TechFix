@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/bg_card_xl"
+    android:padding="14dp"
+    android:layout_marginBottom="12dp"
+    android:elevation="2dp">
+
+    <!-- Top row -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="horizontal" android:gravity="center_vertical"
+        android:layout_marginBottom="8dp">
+
+        <TextView android:id="@+id/ivDeviceIcon"
+            android:layout_width="36dp" android:layout_height="36dp"
+            android:text="📱" android:textSize="18sp" android:gravity="center"
+            android:background="@drawable/bg_quick_blue" android:layout_marginEnd="10dp" />
+
+        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1" android:orientation="vertical">
+            <TextView android:id="@+id/tvReqId"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="REQ-9101" android:textColor="@color/accent"
+                android:textSize="13sp" android:textStyle="bold" />
+            <TextView android:id="@+id/tvReqTime"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="08:45 AM" android:textColor="@color/text_dim" android:textSize="11sp" />
+        </LinearLayout>
+
+        <TextView android:id="@+id/tvUrgency"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="● Urgent" android:textColor="@color/danger"
+            android:textSize="11sp" android:textStyle="bold"
+            android:background="@drawable/bg_danger"
+            android:paddingHorizontal="8dp" android:paddingVertical="4dp" />
+    </LinearLayout>
+
+    <TextView android:id="@+id/tvDeviceModel"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:text="iPhone 14 Pro" android:textColor="@color/text"
+        android:textSize="15sp" android:textStyle="bold" android:layout_marginBottom="2dp" />
+
+    <TextView android:id="@+id/tvIssueSummary"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:text="Shattered screen &amp; unresponsive Face ID module"
+        android:textColor="@color/text_dim" android:textSize="13sp"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Customer info row -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="horizontal" android:gravity="center_vertical"
+        android:layout_marginBottom="8dp">
+
+        <TextView android:id="@+id/tvCustomerName"
+            android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+            android:text="👤 Amara Perera" android:textColor="@color/text_dim" android:textSize="12sp" />
+
+        <TextView android:id="@+id/tvLocation"
+            android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+            android:text="📍 Nugegoda" android:textColor="@color/text_dim" android:textSize="12sp" />
+
+        <TextView android:id="@+id/btnCall"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="📞" android:textSize="22sp" android:textColor="@color/success" />
+    </LinearLayout>
+
+    <!-- Smart dispatch info box -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="vertical" android:background="@color/bg_alt"
+        android:padding="10dp" android:layout_marginBottom="10dp">
+
+        <TextView android:id="@+id/tvAutoMatch"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="🧭 Colombo Branch — 4.2 km"
+            android:textColor="@color/text_dim" android:textSize="12sp" android:layout_marginBottom="3dp" />
+
+        <TextView android:id="@+id/tvTechsAvail"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="🔧 3 techs available"
+            android:textColor="@color/success" android:textSize="12sp" android:layout_marginBottom="3dp" />
+
+        <TextView android:id="@+id/tvPartStatus"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="📦 Parts in stock"
+            android:textColor="@color/success" android:textSize="12sp" />
+    </LinearLayout>
+
+    <!-- Status badge (shown when not pending) -->
+    <TextView android:id="@+id/tvDispatchedStatus"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:text="✓ Dispatched → Colombo Branch"
+        android:textColor="@color/success" android:textSize="12sp" android:textStyle="bold"
+        android:background="@drawable/bg_success"
+        android:paddingHorizontal="10dp" android:paddingVertical="5dp"
+        android:layout_marginBottom="8dp"
+        android:visibility="gone" />
+
+    <Button android:id="@+id/btnViewPhoto"
+        android:layout_width="match_parent" android:layout_height="44dp"
+        android:text="📷  View Device Photo"
+        android:textColor="@color/accent" android:textSize="13sp" android:textStyle="bold"
+        android:background="@drawable/bg_btn_outline"
+        android:layout_marginBottom="10dp"
+        android:visibility="gone" />
+
+    <!-- Action buttons (shown when pending) -->
+    <LinearLayout android:id="@+id/actionRow"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button android:id="@+id/btnAutoAssign"
+            android:layout_width="0dp" android:layout_height="44dp" android:layout_weight="1"
+            android:text="⚡ Auto-Assign"
+            android:textColor="@color/white" android:textSize="12sp" android:textStyle="bold"
+            android:background="@drawable/bg_btn_primary" android:layout_marginEnd="8dp" />
+
+        <Button android:id="@+id/btnAssignTech"
+            android:layout_width="0dp" android:layout_height="44dp" android:layout_weight="1"
+            android:text="Assign Technician"
+            android:textColor="@color/white" android:textSize="12sp" android:textStyle="bold"
+            android:background="@drawable/bg_btn_primary" />
+    </LinearLayout>
+
+</LinearLayout>

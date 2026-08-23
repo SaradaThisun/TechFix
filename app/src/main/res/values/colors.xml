@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Primary Accent -->
+    <color name="accent">#0066FF</color>
+    <color name="accent_dark">#004CC2</color>
+    <color name="accent_light">#EFF6FF</color>
+    <color name="accent_dim">#1A0066FF</color>
+
+    <!-- Backgrounds -->
+    <color name="bg">#F8FAFC</color>
+    <color name="bg_alt">#F1F5F9</color>
+    <color name="surface">#FFFFFF</color>
+    <color name="surface_elevated">#F0F4FF</color>
+
+    <!-- Typography -->
+    <color name="text">#0F172A</color>
+    <color name="text_body">#1E293B</color>
+    <color name="text_dim">#64748B</color>
+    <color name="text_muted">#94A3B8</color>
+
+    <!-- Borders -->
+    <color name="glass_border">#E2E8F0</color>
+    <color name="divider">#F1F5F9</color>
+
+    <!-- Semantic -->
+    <color name="success">#10B981</color>
+    <color name="success_dim">#1A10B981</color>
+    <color name="warning">#F59E0B</color>
+    <color name="warning_dim">#1AF59E0B</color>
+    <color name="danger">#EF4444</color>
+    <color name="danger_dim">#1AEF4444</color>
+    <color name="info">#3B82F6</color>
+    <color name="purple">#6366F1</color>
+
+    <!-- Overlay -->
+    <color name="overlay">#80000000</color>
+
+    <!-- White variants -->
+    <color name="white">#FFFFFF</color>
+    <color name="white_70">#B3FFFFFF</color>
+    <color name="white_20">#33FFFFFF</color>
+
+    <!-- Status bar -->
+    <color name="status_bar">#0066FF</color>
+</resources>

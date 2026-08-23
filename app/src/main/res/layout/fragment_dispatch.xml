@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/bg">
+
+    <!-- Blue gradient header -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="horizontal" android:gravity="center_vertical"
+        android:background="@drawable/bg_accent_gradient"
+        android:paddingHorizontal="20dp" android:paddingTop="16dp" android:paddingBottom="16dp">
+
+        <LinearLayout android:id="@+id/profileArea"
+            android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1" android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:clickable="true" android:focusable="true"
+            android:background="?attr/selectableItemBackground">
+
+            <TextView android:id="@+id/tvAvatar"
+                android:layout_width="44dp" android:layout_height="44dp"
+                android:text="S" android:textColor="@color/accent"
+                android:textSize="18sp" android:textStyle="bold" android:gravity="center"
+                android:background="@drawable/bg_card" android:layout_marginEnd="12dp" />
+
+            <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Branch Dispatch" android:textColor="@color/white"
+                    android:textSize="18sp" android:textStyle="bold" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Technician Dashboard" android:textColor="#B3FFFFFF"
+                    android:textSize="11sp" android:layout_marginTop="2dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:orientation="vertical" android:gravity="center"
+                android:background="@drawable/bg_pill_white_20"
+                android:paddingHorizontal="12dp" android:paddingVertical="6dp"
+                android:layout_marginEnd="8dp">
+                <TextView android:id="@+id/tvPendingCount"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="4" android:textColor="@color/white"
+                    android:textSize="18sp" android:textStyle="bold" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Pending" android:textColor="#B3FFFFFF" android:textSize="10sp" />
+            </LinearLayout>
+            <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:orientation="vertical" android:gravity="center"
+                android:background="@drawable/bg_success"
+                android:paddingHorizontal="12dp" android:paddingVertical="6dp">
+                <TextView android:id="@+id/tvDispatchedCount"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="0" android:textColor="#6EE7B7"
+                    android:textSize="18sp" android:textStyle="bold" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Done" android:textColor="#B3FFFFFF" android:textSize="10sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Branch tabs -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="horizontal" android:background="@color/surface"
+        android:paddingHorizontal="20dp" android:paddingVertical="10dp"
+        android:elevation="2dp">
+        <TextView android:id="@+id/tabColombo"
+            android:layout_width="0dp" android:layout_height="36dp" android:layout_weight="1"
+            android:text="Colombo" android:textColor="@color/white"
+            android:textSize="13sp" android:textStyle="bold" android:gravity="center"
+            android:background="@drawable/bg_btn_primary" android:layout_marginEnd="8dp" />
+        <TextView android:id="@+id/tabGalle"
+            android:layout_width="0dp" android:layout_height="36dp" android:layout_weight="1"
+            android:text="Galle" android:textColor="@color/text_dim"
+            android:textSize="13sp" android:gravity="center"
+            android:background="@drawable/bg_pill_surface" />
+    </LinearLayout>
+
+    <!-- Search + urgency filter -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="vertical" android:background="@color/surface"
+        android:paddingHorizontal="20dp" android:paddingBottom="10dp" android:elevation="1dp">
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:gravity="center_vertical"
+            android:background="@drawable/bg_input" android:paddingHorizontal="14dp"
+            android:layout_marginBottom="8dp">
+            <EditText android:id="@+id/etSearch"
+                android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+                android:hint="Search device, customer, location…"
+                android:textColorHint="@color/text_muted" android:textColor="@color/text"
+                android:textSize="13sp" android:background="@null" android:paddingVertical="12dp"
+                android:inputType="text" />
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView android:id="@+id/urgencyAll"
+                android:layout_width="0dp" android:layout_height="34dp" android:layout_weight="1"
+                android:text="All" android:textColor="@color/accent"
+                android:textSize="12sp" android:textStyle="bold" android:gravity="center"
+                android:background="@drawable/bg_pill_accent" android:layout_marginEnd="6dp" />
+            <TextView android:id="@+id/urgencyUrgent"
+                android:layout_width="0dp" android:layout_height="34dp" android:layout_weight="1"
+                android:text="Urgent" android:textColor="@color/text_dim"
+                android:textSize="12sp" android:gravity="center"
+                android:background="@drawable/bg_pill_surface" android:layout_marginEnd="6dp" />
+            <TextView android:id="@+id/urgencyStandard"
+                android:layout_width="0dp" android:layout_height="34dp" android:layout_weight="1"
+                android:text="Standard" android:textColor="@color/text_dim"
+                android:textSize="12sp" android:gravity="center"
+                android:background="@drawable/bg_pill_surface" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvRequests"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingHorizontal="16dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="80dp"
+        android:clipToPadding="false"
+        android:scrollbars="none" />
+</LinearLayout>

@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/bg">
+
+    <!-- Blue gradient header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="@drawable/bg_accent_gradient"
+        android:paddingHorizontal="20dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp">
+
+        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1" android:orientation="vertical">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Repair Tracking" android:textColor="@color/white"
+                android:textSize="22sp" android:textStyle="bold" />
+            <TextView android:id="@+id/tvTicketIdHeader"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="#TF-8942" android:textColor="#B3FFFFFF"
+                android:textSize="13sp" android:textStyle="bold" android:layout_marginTop="2dp" />
+        </LinearLayout>
+
+        <TextView android:id="@+id/tvStatusBadge"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="● Repair in Progress"
+            android:textColor="@color/white" android:textSize="11sp" android:textStyle="bold"
+            android:background="@drawable/bg_pill_white_20"
+            android:paddingHorizontal="10dp" android:paddingVertical="5dp" />
+    </LinearLayout>
+
+    <ScrollView android:id="@+id/mainScroll"
+        android:layout_width="match_parent" android:layout_height="0dp"
+        android:layout_weight="1" android:scrollbars="none">
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:padding="20dp">
+
+            <!-- Device card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="20dp" app:cardElevation="5dp"
+                app:strokeColor="@color/glass_border" app:strokeWidth="1dp"
+                app:cardBackgroundColor="@color/surface"
+                xmlns:app="http://schemas.android.com/apk/res-auto">
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:padding="16dp">
+
+                    <LinearLayout android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:orientation="horizontal"
+                        android:gravity="center_vertical" android:layout_marginBottom="8dp">
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/ivDevicePhoto"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_marginEnd="12dp"
+                            android:scaleType="centerCrop"
+                            android:visibility="gone"
+                            app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Medium" />
+
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1" android:orientation="vertical">
+                            <TextView android:id="@+id/tvDeviceModel"
+                                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:text="iPhone 15 Pro Max" android:textColor="@color/text"
+                                android:textSize="16sp" android:textStyle="bold" />
+                            <TextView android:id="@+id/tvDeviceCategory"
+                                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:text="Screen &amp; Battery Overhaul"
+                                android:textColor="@color/accent" android:textSize="11sp"
+                                android:textStyle="bold" android:layout_marginTop="2dp" />
+                        </LinearLayout>
+
+                        <TextView android:id="@+id/tvProgressCircle"
+                            android:layout_width="52dp" android:layout_height="52dp"
+                            android:text="68%" android:textColor="@color/accent"
+                            android:textSize="13sp" android:textStyle="bold"
+                            android:gravity="center"
+                            android:background="@drawable/bg_circle_accent" />
+                    </LinearLayout>
+
+                    <TextView android:id="@+id/tvIssueText"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Cracked screen…"
+                        android:textColor="@color/text_dim" android:textSize="13sp"
+                        android:maxLines="2" android:layout_marginBottom="10dp" />
+
+                    <ProgressBar android:id="@+id/progressBar"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="match_parent" android:layout_height="7dp"
+                        android:progressTint="@color/accent"
+                        android:progressBackgroundTint="@color/bg_alt"
+                        android:max="100" android:progress="68"
+                        android:layout_marginBottom="8dp" />
+
+                    <LinearLayout android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:orientation="horizontal"
+                        android:gravity="center_vertical">
+                        <TextView android:id="@+id/tvBranchMeta"
+                            android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="📍 Colombo Branch" android:textColor="@color/text_dim"
+                            android:textSize="11sp" />
+                        <TextView android:id="@+id/tvEtaMeta"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="⏱ ETA: Today at 4:30 PM"
+                            android:textColor="@color/accent" android:textSize="11sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Approval Card -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/approvalCard"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="20dp" app:cardElevation="6dp"
+                app:strokeColor="@color/warning" app:strokeWidth="2dp"
+                app:cardBackgroundColor="@color/surface"
+                android:visibility="gone"
+                xmlns:app="http://schemas.android.com/apk/res-auto">
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:padding="16dp">
+
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="⚠️ Action Required: Approve Quote"
+                        android:textColor="@color/warning" android:textSize="15sp"
+                        android:textStyle="bold" android:layout_marginBottom="8dp" />
+
+                    <TextView android:id="@+id/tvApprovalMessage"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="The technician has completed diagnostics. Please review the estimated costs to proceed."
+                        android:textColor="@color/text_dim" android:textSize="13sp"
+                        android:layout_marginBottom="12dp" />
+
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="horizontal" android:layout_marginBottom="16dp">
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1" android:orientation="vertical">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:text="Estimated Total" android:textColor="@color/text_dim"
+                                android:textSize="11sp" />
+                            <TextView android:id="@+id/tvEstimatedTotal"
+                                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:text="Rs. 8,500" android:textColor="@color/text"
+                                android:textSize="18sp" android:textStyle="bold" />
+                        </LinearLayout>
+                        <Button android:id="@+id/btnApproveQuote"
+                            android:layout_width="wrap_content" android:layout_height="48dp"
+                            android:text="Approve &amp; Start"
+                            android:textColor="@color/white" android:textSize="13sp"
+                            android:textStyle="bold" android:background="@drawable/bg_btn_primary"
+                            android:paddingHorizontal="16dp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Technician card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="20dp" app:cardElevation="3dp"
+                app:strokeColor="@color/glass_border" app:strokeWidth="1dp"
+                app:cardBackgroundColor="@color/surface"
+                xmlns:app="http://schemas.android.com/apk/res-auto">
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:padding="16dp">
+
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Assigned Technician" android:textColor="@color/text"
+                        android:textSize="15sp" android:textStyle="bold"
+                        android:layout_marginBottom="12dp" />
+
+                    <LinearLayout android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/ivTechAvatar"
+                            android:layout_width="54dp" android:layout_height="54dp"
+                            android:src="@drawable/ic_person_placeholder"
+                            app:civ_border_width="2dp"
+                            app:civ_border_color="@color/accent"
+                            xmlns:app="http://schemas.android.com/apk/res-auto" />
+
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1" android:orientation="vertical"
+                            android:layout_marginHorizontal="12dp">
+                            <TextView android:id="@+id/tvTechName"
+                                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:text="Kasun Weerasinghe" android:textColor="@color/text"
+                                android:textSize="15sp" android:textStyle="bold" />
+                            <TextView android:id="@+id/tvTechRole"
+                                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:text="Lead Master Technician"
+                                android:textColor="@color/text_dim" android:textSize="11sp"
+                                android:layout_marginTop="2dp" />
+                            <TextView android:id="@+id/tvTechRating"
+                                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:text="⭐ 4.95" android:textColor="@color/warning"
+                                android:textSize="12sp" android:textStyle="bold"
+                                android:layout_marginTop="4dp" />
+                        </LinearLayout>
+
+                        <TextView android:id="@+id/btnCallTech"
+                            android:layout_width="42dp" android:layout_height="42dp"
+                            android:text="📞" android:textSize="20sp" android:gravity="center"
+                            android:background="@drawable/bg_call_btn" />
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Timeline card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="20dp" app:cardElevation="3dp"
+                app:strokeColor="@color/glass_border" app:strokeWidth="1dp"
+                app:cardBackgroundColor="@color/surface"
+                xmlns:app="http://schemas.android.com/apk/res-auto">
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:padding="16dp">
+
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Repair Pipeline" android:textColor="@color/text"
+                        android:textSize="15sp" android:textStyle="bold"
+                        android:layout_marginBottom="12dp" />
+
+                    <LinearLayout android:id="@+id/timelineContainer"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="vertical" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Status logs card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="20dp" app:cardElevation="3dp"
+                app:strokeColor="@color/glass_border" app:strokeWidth="1dp"
+                app:cardBackgroundColor="@color/surface"
+                xmlns:app="http://schemas.android.com/apk/res-auto">
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:padding="16dp">
+
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Technician Activity Log" android:textColor="@color/text"
+                        android:textSize="15sp" android:textStyle="bold"
+                        android:layout_marginBottom="12dp" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvStatusLogs"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:nestedScrollingEnabled="false" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Payment bar -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/paymentBar"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="20dp" app:cardElevation="5dp"
+                app:strokeColor="@color/glass_border" app:strokeWidth="1dp"
+                app:cardBackgroundColor="@color/surface"
+                xmlns:app="http://schemas.android.com/apk/res-auto">
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:gravity="center_vertical"
+                    android:padding="16dp">
+
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:orientation="vertical">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Total Amount" android:textColor="@color/text_dim"
+                            android:textSize="11sp" />
+                        <TextView android:id="@+id/tvTotalAmount"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Rs. 29,500" android:textColor="@color/accent"
+                            android:textSize="20sp" android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <Button android:id="@+id/btnProceedPayment"
+                        android:layout_width="wrap_content" android:layout_height="48dp"
+                        android:text="💳 Proceed to Payment"
+                        android:textColor="@color/white" android:textSize="13sp" android:textStyle="bold"
+                        android:background="@drawable/bg_btn_primary" android:paddingHorizontal="16dp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- No active repair view -->
+    <LinearLayout android:id="@+id/noDataLayout"
+        android:layout_width="match_parent" android:layout_height="match_parent"
+        android:orientation="vertical" android:gravity="center"
+        android:padding="40dp" android:visibility="gone">
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="🔍" android:textSize="64sp" android:layout_marginBottom="16dp" />
+        <TextView android:id="@+id/tvNoDataTitle"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="No Active Repairs" android:textColor="@color/text"
+            android:textSize="20sp" android:textStyle="bold" android:layout_marginBottom="8dp" />
+        <TextView android:id="@+id/tvNoDataDesc"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="You don't have any ongoing repair requests at the moment."
+            android:textColor="@color/text_dim" android:textSize="14sp"
+            android:textAlignment="center" />
+    </LinearLayout>
+</LinearLayout>

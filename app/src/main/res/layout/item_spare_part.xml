@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/bg_card_xl"
+    android:padding="14dp"
+    android:layout_marginBottom="12dp"
+    android:elevation="2dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/ivPartImage"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginEnd="14dp"
+            android:scaleType="centerCrop"
+            android:background="@color/bg_alt"
+            app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Medium"
+            xmlns:app="http://schemas.android.com/apk/res-auto" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <!-- Part ID + OEM badge + category -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:gravity="center_vertical"
+                android:layout_marginBottom="4dp">
+
+                <TextView android:id="@+id/tvPartId"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="OEM-IP15P-SCR" android:textColor="@color/accent"
+                    android:textSize="11sp" android:textStyle="bold" android:layout_marginEnd="8dp" />
+
+                <TextView android:id="@+id/tvOemBadge"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="OEM" android:textColor="@color/success"
+                    android:textSize="9sp" android:textStyle="bold"
+                    android:background="@drawable/bg_success"
+                    android:paddingHorizontal="7dp" android:paddingVertical="2dp"
+                    android:visibility="gone" />
+
+                <View android:layout_width="0dp" android:layout_height="0dp" android:layout_weight="1" />
+
+                <TextView android:id="@+id/tvCategory"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Screen Assemblies" android:textColor="@color/text_dim"
+                    android:textSize="11sp" />
+            </LinearLayout>
+
+            <TextView android:id="@+id/tvPartName"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="iPhone 15 Pro Max OLED Assembly"
+                android:textColor="@color/text" android:textSize="15sp" android:textStyle="bold"
+                android:layout_marginBottom="2dp" />
+
+            <TextView android:id="@+id/tvCompatible"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="iPhone 15 Pro Max"
+                android:textColor="@color/text_dim" android:textSize="12sp"
+                android:maxLines="1" android:layout_marginBottom="10dp" />
+
+            <!-- Stock status -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:gravity="center_vertical"
+                android:layout_marginBottom="6dp">
+
+                <TextView android:id="@+id/tvStockBadge"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="✓ 4 units" android:textColor="@color/success"
+                    android:textSize="12sp" android:textStyle="bold"
+                    android:background="@drawable/bg_success"
+                    android:paddingHorizontal="10dp" android:paddingVertical="4dp"
+                    android:layout_marginEnd="10dp" />
+
+                <TextView android:id="@+id/tvOtherBranch"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Other branch: 2 units" android:textColor="@color/text_muted"
+                    android:textSize="11sp" />
+            </LinearLayout>
+
+            <!-- Cost + warranty -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:gravity="center_vertical"
+                android:layout_marginBottom="10dp">
+
+                <TextView android:id="@+id/tvCost"
+                    android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+                    android:text="Rs. 21,000 / unit" android:textColor="@color/accent"
+                    android:textSize="13sp" android:textStyle="bold" />
+
+                <TextView android:id="@+id/tvWarranty"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="3mo warranty" android:textColor="@color/text_dim"
+                    android:textSize="11sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Action buttons -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button android:id="@+id/btnTransfer"
+            android:layout_width="0dp" android:layout_height="42dp" android:layout_weight="1"
+            android:text="Transfer"
+            android:textColor="@color/white" android:textSize="10sp" android:textStyle="bold"
+            android:background="@drawable/bg_btn_primary" android:layout_marginEnd="6dp" />
+
+        <Button android:id="@+id/btnRestock"
+            android:layout_width="0dp" android:layout_height="42dp" android:layout_weight="1"
+            android:text="Restock"
+            android:textColor="@color/white" android:textSize="10sp" android:textStyle="bold"
+            android:background="@drawable/bg_btn_primary" android:layout_marginEnd="6dp" />
+
+        <Button android:id="@+id/btnLogUsed"
+            android:layout_width="0dp" android:layout_height="42dp" android:layout_weight="1"
+            android:text="Log Used"
+            android:textColor="@color/white" android:textSize="10sp" android:textStyle="bold"
+            android:background="@drawable/bg_btn_primary" />
+    </LinearLayout>
+</LinearLayout>

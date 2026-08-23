@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- TF logo mark in white on blue background -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M28,30 L70,30 L70,38 L52,38 L52,54 L66,54 L66,62 L52,62 L52,78 L44,78 L44,38 L28,38 Z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M72,30 L72,78 L80,78 L80,58 L92,58 L92,50 L80,50 L80,38 L94,38 L94,30 Z" />
+</vector>

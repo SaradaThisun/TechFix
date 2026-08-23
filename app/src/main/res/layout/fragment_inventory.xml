@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- Header -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:gravity="center_vertical"
+            android:background="@color/surface" android:paddingHorizontal="20dp"
+            android:paddingTop="16dp" android:paddingBottom="12dp" android:elevation="2dp">
+
+            <LinearLayout android:id="@+id/profileArea"
+                android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:clickable="true" android:focusable="true"
+                android:background="?attr/selectableItemBackground">
+
+                <TextView android:id="@+id/tvAvatar"
+                    android:layout_width="40dp" android:layout_height="40dp"
+                    android:text="I" android:textColor="@color/white"
+                    android:textSize="16sp" android:textStyle="bold" android:gravity="center"
+                    android:background="@drawable/bg_avatar" android:layout_marginEnd="12dp" />
+
+                <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Spare Parts" android:textColor="@color/text"
+                        android:textSize="18sp" android:textStyle="bold" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Inventory Control" android:textColor="@color/text_dim"
+                        android:textSize="11sp" android:layout_marginTop="2dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView android:id="@+id/btnCourier"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="🚗 Courier (1 in transit)"
+                android:textColor="@color/accent" android:textSize="12sp" android:textStyle="bold"
+                android:background="@drawable/bg_pill_accent"
+                android:paddingHorizontal="12dp" android:paddingVertical="6dp" />
+        </LinearLayout>
+
+        <!-- Branch tabs -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:paddingHorizontal="20dp"
+            android:paddingVertical="10dp">
+            <TextView android:id="@+id/tabColombo"
+                android:layout_width="0dp" android:layout_height="36dp" android:layout_weight="1"
+                android:text="Colombo Lab" android:textColor="@color/white"
+                android:textSize="13sp" android:textStyle="bold" android:gravity="center"
+                android:background="@drawable/bg_btn_primary" android:layout_marginEnd="8dp" />
+            <TextView android:id="@+id/tabGalle"
+                android:layout_width="0dp" android:layout_height="36dp" android:layout_weight="1"
+                android:text="Galle Lab" android:textColor="@color/text_dim"
+                android:textSize="13sp" android:gravity="center"
+                android:background="@drawable/bg_pill_surface" />
+        </LinearLayout>
+
+        <!-- Stats row -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:paddingHorizontal="20dp"
+            android:layout_marginBottom="8dp">
+            <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:orientation="vertical" android:gravity="center"
+                android:background="@drawable/bg_card" android:padding="10dp"
+                android:layout_marginEnd="8dp">
+                <TextView android:id="@+id/tvTotalSkus"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="6" android:textColor="@color/accent"
+                    android:textSize="20sp" android:textStyle="bold" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Total SKUs" android:textColor="@color/text_dim" android:textSize="10sp" />
+            </LinearLayout>
+            <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:orientation="vertical" android:gravity="center"
+                android:background="@drawable/bg_card" android:padding="10dp"
+                android:layout_marginEnd="8dp">
+                <TextView android:id="@+id/tvUnitsInLab"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="34" android:textColor="@color/accent"
+                    android:textSize="20sp" android:textStyle="bold" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Units In Lab" android:textColor="@color/text_dim" android:textSize="10sp" />
+            </LinearLayout>
+            <LinearLayout android:id="@+id/btnLowFilter"
+                android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:orientation="vertical" android:gravity="center"
+                android:background="@drawable/bg_card" android:padding="10dp">
+                <TextView android:id="@+id/tvLowCount"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="2" android:textColor="@color/warning"
+                    android:textSize="20sp" android:textStyle="bold" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Low / Out" android:textColor="@color/text_dim" android:textSize="10sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Search -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:gravity="center_vertical"
+            android:background="@drawable/bg_input" android:paddingHorizontal="14dp"
+            android:layout_marginLeft="20dp" android:layout_marginRight="20dp"
+            android:layout_marginBottom="8dp">
+            <EditText android:id="@+id/etSearch"
+                android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+                android:hint="Search part name, ID, device…"
+                android:textColorHint="@color/text_muted" android:textColor="@color/text"
+                android:textSize="13sp" android:background="@null" android:paddingVertical="12dp"
+                android:inputType="text" />
+        </LinearLayout>
+
+        <!-- Category pills -->
+        <HorizontalScrollView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:scrollbars="none" android:paddingHorizontal="16dp" android:layout_marginBottom="8dp">
+            <LinearLayout android:id="@+id/categoryChips"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:orientation="horizontal" />
+        </HorizontalScrollView>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvParts"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:paddingHorizontal="16dp"
+            android:paddingTop="4dp"
+            android:paddingBottom="80dp"
+            android:clipToPadding="false"
+            android:scrollbars="none" />
+    </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnAddPart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="24dp"
+        android:src="@android:drawable/ic_input_add"
+        app:tint="@color/white"
+        app:backgroundTint="@color/accent" />
+
+</FrameLayout>

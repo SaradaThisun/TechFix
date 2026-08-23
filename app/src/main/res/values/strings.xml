@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TechFix</string>
+    <string name="tagline">Sri Lanka\'s Premier Device Repair Platform</string>
+
+    <!-- Auth -->
+    <string name="sign_in">Sign In</string>
+    <string name="sign_in_subtitle">Sign in to your repair account</string>
+    <string name="create_account">Create Account</string>
+    <string name="register_subtitle">Create your TechFix account</string>
+    <string name="email_or_phone">Email or Phone</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="full_name">Full Name</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="email_address">Email Address</string>
+    <string name="preferred_branch">Preferred Branch</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="already_have_account">Already have an account?</string>
+    <string name="no_account">Don\'t have an account?</string>
+    <string name="demo_fill">Demo Fill</string>
+    <string name="register_now">Register Now</string>
+    <string name="skip_intro">Skip Intro</string>
+    <string name="get_started">Get Started</string>
+
+    <!-- Branches -->
+    <string name="colombo_branch">Colombo Branch</string>
+    <string name="galle_branch">Galle Branch</string>
+    <string name="both_open">Both Open</string>
+    <string name="our_branches">Our Branches</string>
+    <string name="open_now">Open Now</string>
+    <string name="directions">Directions</string>
+    <string name="book_this_branch">Book This Branch</string>
+
+    <!-- Home -->
+    <string name="greeting">Ayubowan</string>
+    <string name="book_repair">Book Repair</string>
+    <string name="track_status">Track Status</string>
+    <string name="catalog">Catalog</string>
+    <string name="hubs">Hubs</string>
+    <string name="active_repair">Active Repair</string>
+    <string name="view_details">View Details →</string>
+    <string name="device_categories">Device Categories</string>
+    <string name="quick_actions">Quick Actions</string>
+    <string name="emergency_repair">Need Emergency Repair?</string>
+    <string name="emergency_sub">Call our branch hotlines 7 days a week</string>
+
+    <!-- Booking -->
+    <string name="book_a_repair">Book a Repair</string>
+    <string name="continue_btn">Continue</string>
+    <string name="confirm_book">Confirm &amp; Book</string>
+    <string name="back">Back</string>
+    <string name="in_store_dropoff">In-Store Drop-off</string>
+    <string name="courier_pickup">Courier Pickup</string>
+
+    <!-- Tracking -->
+    <string name="repair_tracking">Repair Tracking</string>
+    <string name="technician_assigned">Assigned Technician</string>
+    <string name="repair_pipeline">Repair Pipeline</string>
+    <string name="activity_log">Technician Activity Log</string>
+    <string name="proceed_payment">Proceed to Payment</string>
+
+    <!-- History -->
+    <string name="repair_history">Repair History</string>
+    <string name="invoice">Invoice</string>
+    <string name="re_book">Re-book</string>
+    <string name="email_receipt">Email Receipt</string>
+    <string name="download_pdf">Download PDF</string>
+
+    <!-- Payment -->
+    <string name="payment">Payment</string>
+    <string name="order_summary">Order Summary</string>
+    <string name="service_fee">Service Fee</string>
+    <string name="oem_parts">OEM Parts</string>
+    <string name="app_discount">App Discount</string>
+    <string name="total">Total</string>
+    <string name="payment_method">Payment Method</string>
+    <string name="card_number">Card Number</string>
+    <string name="cardholder_name">Cardholder Name</string>
+    <string name="expiry">Expiry</string>
+    <string name="cvv">CVV</string>
+    <string name="pay_at_branch">Pay at Branch</string>
+    <string name="confirm_collection">Confirm Collection</string>
+
+    <!-- Services -->
+    <string name="repair_catalog">Repair Catalog</string>
+    <string name="search_services">Search services, devices…</string>
+    <string name="book_now">Book Now</string>
+    <string name="starting_from">Starting From</string>
+
+    <!-- Staff - Dispatch -->
+    <string name="branch_dispatch">Branch Dispatch</string>
+    <string name="auto_assign">Auto-Assign</string>
+    <string name="re_route">Re-Route</string>
+    <string name="assign_tech">Assign Tech</string>
+
+    <!-- Staff - Workbench -->
+    <string name="workbench">Workbench</string>
+    <string name="open_workbench">Open Workbench</string>
+    <string name="mark_ready">Mark Quality Passed &amp; Ready for Pickup</string>
+    <string name="add_note">Log</string>
+
+    <!-- Staff - Inventory -->
+    <string name="spare_parts">Spare Parts</string>
+    <string name="inventory_mgmt">Inventory Management</string>
+    <string name="request_transfer">Request Transfer</string>
+    <string name="log_used">Log Used</string>
+    <string name="confirm_transfer">Confirm Transfer</string>
+    <string name="deduct_unit">Deduct 1 Unit</string>
+
+    <!-- Nav labels -->
+    <string name="nav_home">Home</string>
+    <string name="nav_catalog">Catalog</string>
+    <string name="nav_book">Book</string>
+    <string name="nav_track">Track</string>
+    <string name="nav_hubs">Hubs</string>
+    <string name="nav_history">History</string>
+    <string name="nav_dispatch">Dispatch</string>
+    <string name="nav_workbench">Workbench</string>
+    <string name="nav_inventory">Inventory</string>
+    <string name="staff_mode">Staff Mode</string>
+    <string name="customer_mode">Customer Mode</string>
+
+    <!-- Misc -->
+    <string name="warranty_days">d Warranty</string>
+    <string name="units">units</string>
+    <string name="out_of_stock">OUT OF STOCK</string>
+    <string name="low_stock">LOW</string>
+    <string name="oem">OEM</string>
+    <string name="popular">Popular</string>
+    <string name="serving">Serving Colombo &amp; Galle</string>
+    <string name="ssl_secure">256-bit SSL encrypted · 3D Secure authentication</string>
+</resources>
