@@ -36,8 +36,8 @@ public class BranchesActivity extends AppCompatActivity {
     private final String[] stockLevels = {"High (98%)", "Optimal (94%)"};
     private final boolean[] partsInStock = {true, true}; // toggle to false to test fallback logic
     private final String[] addresses = {
-            "No. 428, R. A. De Mel Mawatha (Duplication Rd), Colombo 03",
-            "No. 74, Main Street, Galle Town (Opposite Clock Tower Rd)"
+            "TechFix Tower, Liberty Plaza, Colombo 03",
+            "TechFix Hub, Gamini Building, Galle"
     };
     private final String[] hours = {
             "Mon - Sat: 8:30 AM - 7:30 PM\nSunday: 9:00 AM - 3:00 PM",
@@ -46,12 +46,11 @@ public class BranchesActivity extends AppCompatActivity {
     private final String[] mainPhones = {"+94 11 259 8870", "+94 91 224 5590"};
     private final String[] altPhones = {"+94 77 123 4567", "+94 71 889 9120"};
     private final String[] mapsUrls = {
-            "https://maps.google.com/?q=Colombo+03+Duplication+Road",
-            "https://maps.google.com/?q=Galle+Main+Street"
+            "https://maps.google.com/?q=Liberty+Plaza+Colombo",
+            "https://maps.google.com/?q=Galle+Fort+Sri+Lanka"
     };
-    private final double[] branchLat = {6.8978, 6.0367};
-    private final double[] branchLng = {79.8563, 80.2170};
-
+    private final double[] branchLat = {6.9147, 6.0367};
+    private final double[] branchLng = {79.8482, 80.2170};
     private FusedLocationProviderClient fusedLocationClient;
     private double userLat = 0;
     private double userLng = 0;
