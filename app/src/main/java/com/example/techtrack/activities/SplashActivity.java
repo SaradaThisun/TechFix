@@ -57,7 +57,7 @@ public class SplashActivity extends AppCompatActivity {
 
     private void goToRegister() {
         // TODO: replace with RegisterActivity once it's built
-        Intent intent = new Intent(SplashActivity.this, MainActivity.class);
+        Intent intent = new Intent(SplashActivity.this, RegisterActivity.class);
         startActivity(intent);
         finish();
     }
