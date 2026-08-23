@@ -5,14 +5,11 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.text.TextUtils;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
 
 import com.example.techtrack.MainActivity;
 import com.example.techtrack.R;
@@ -20,9 +17,9 @@ import com.example.techtrack.R;
 public class RegisterActivity extends AppCompatActivity {
 
     private EditText etFullName, etPhone, etEmail, etPassword, etConfirmPassword;
-    private Button btnRegister, btnBranchColombo, btnBranchGalle;
-    private TextView tvError, tvSignIn, tvStrength;
-    private String selectedBranch = "Colombo"; // Default
+    private TextView tvError, tvStrength, tvSignIn;
+    private Button btnBranchColombo, btnBranchGalle, btnRegister;
+    private String selectedBranch = "Colombo Branch";
     private final Handler handler = new Handler(Looper.getMainLooper());
 
     @Override
@@ -30,76 +27,80 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        // Initialize views
         etFullName = findViewById(R.id.etFullName);
         etPhone = findViewById(R.id.etPhone);
         etEmail = findViewById(R.id.etEmail);
         etPassword = findViewById(R.id.etPassword);
         etConfirmPassword = findViewById(R.id.etConfirmPassword);
-        btnRegister = findViewById(R.id.btnRegister);
+        tvError = findViewById(R.id.tvError);
+        tvStrength = findViewById(R.id.tvStrength);
+        tvSignIn = findViewById(R.id.tvSignIn);
         btnBranchColombo = findViewById(R.id.btnBranchColombo);
         btnBranchGalle = findViewById(R.id.btnBranchGalle);
-        tvError = findViewById(R.id.tvError);
-        tvSignIn = findViewById(R.id.tvSignIn);
-        tvStrength = findViewById(R.id.tvStrength);
+        btnRegister = findViewById(R.id.btnRegister);
 
-        // Branch Selection Logic
-        btnBranchColombo.setOnClickListener(v -> selectBranch("Colombo"));
-        btnBranchGalle.setOnClickListener(v -> selectBranch("Galle"));
+        btnBranchColombo.setOnClickListener(v -> selectBranch("Colombo Branch"));
+        btnBranchGalle.setOnClickListener(v -> selectBranch("Galle Branch"));
 
-        // Navigation to Login
-        tvSignIn.setOnClickListener(v -> finish());
+        btnRegister.setOnClickListener(v -> attemptRegister());
 
-        // Registration Logic
-        btnRegister.setOnClickListener(v -> attemptRegistration());
+        tvSignIn.setOnClickListener(v -> {
+            startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
+            finish();
+        });
     }
 
     private void selectBranch(String branch) {
         selectedBranch = branch;
-        if (branch.equals("Colombo")) {
-            btnBranchColombo.setBackgroundTintList(ContextCompat.getColorStateList(this, R.color.accent));
-            btnBranchColombo.setTextColor(ContextCompat.getColor(this, R.color.white));
-            btnBranchGalle.setBackgroundTintList(ContextCompat.getColorStateList(this, R.color.surface));
-            btnBranchGalle.setTextColor(ContextCompat.getColor(this, R.color.text_dim));
+        if (branch.equals("Colombo Branch")) {
+            btnBranchColombo.setBackgroundTintList(getColorStateList(com.example.techtrack.R.color.accent));
+            btnBranchColombo.setTextColor(getColor(com.example.techtrack.R.color.white));
+            btnBranchGalle.setBackgroundTintList(getColorStateList(com.example.techtrack.R.color.surface));
+            btnBranchGalle.setTextColor(getColor(com.example.techtrack.R.color.text_dim));
         } else {
-            btnBranchGalle.setBackgroundTintList(ContextCompat.getColorStateList(this, R.color.accent));
-            btnBranchGalle.setTextColor(ContextCompat.getColor(this, R.color.white));
-            btnBranchColombo.setBackgroundTintList(ContextCompat.getColorStateList(this, R.color.surface));
-            btnBranchColombo.setTextColor(ContextCompat.getColor(this, R.color.text_dim));
+            btnBranchGalle.setBackgroundTintList(getColorStateList(com.example.techtrack.R.color.accent));
+            btnBranchGalle.setTextColor(getColor(com.example.techtrack.R.color.white));
+            btnBranchColombo.setBackgroundTintList(getColorStateList(com.example.techtrack.R.color.surface));
+            btnBranchColombo.setTextColor(getColor(com.example.techtrack.R.color.text_dim));
         }
     }
 
-    private void attemptRegistration() {
-        String name = etFullName.getText().toString().trim();
+    private void attemptRegister() {
+        String fullName = etFullName.getText().toString().trim();
         String phone = etPhone.getText().toString().trim();
         String email = etEmail.getText().toString().trim();
-        String pass = etPassword.getText().toString().trim();
-        String confirmPass = etConfirmPassword.getText().toString().trim();
+        String password = etPassword.getText().toString().trim();
+        String confirmPassword = etConfirmPassword.getText().toString().trim();
 
-        if (TextUtils.isEmpty(name) || TextUtils.isEmpty(phone) || TextUtils.isEmpty(email) || TextUtils.isEmpty(pass)) {
+        if (TextUtils.isEmpty(fullName) || TextUtils.isEmpty(phone)
+                || TextUtils.isEmpty(email) || TextUtils.isEmpty(password)) {
             showError("Please fill in all required fields.");
             return;
         }
-
-        if (!pass.equals(confirmPass)) {
+        if (!password.equals(confirmPassword)) {
             showError("Passwords do not match.");
             return;
         }
+        if (password.length() < 6) {
+            showError("Please use a stronger password.");
+            return;
+        }
 
-        tvError.setVisibility(View.GONE);
+        tvError.setVisibility(TextView.GONE);
         btnRegister.setEnabled(false);
-        btnRegister.setText("Creating Account...");
+        btnRegister.setText("Creating account...");
 
-        // Simulate API Call
+        // Simulate network delay, same as RN version (1500ms)
         handler.postDelayed(() -> {
-            Toast.makeText(this, "Registration Successful for " + name, Toast.LENGTH_LONG).show();
+            // TODO: replace with real API call via ApiClient.getApiService().register(...)
+            // TODO: replace with MainAppActivity once it's built
             startActivity(new Intent(RegisterActivity.this, MainActivity.class));
             finish();
-        }, 2000);
+        }, 1500);
     }
 
     private void showError(String message) {
         tvError.setText(message);
-        tvError.setVisibility(View.VISIBLE);
+        tvError.setVisibility(TextView.VISIBLE);
     }
 }
