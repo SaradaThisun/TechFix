@@ -1,4 +1,17 @@
+# Node
 node_modules/
-.env
-.env.local
-npm-debug.log
+backend/.env
+backend/uploads/*
+!backend/uploads/.gitkeep
+
+# Android
+mobile/.gradle/
+mobile/.idea/
+mobile/local.properties
+mobile/build/
+mobile/app/build/
+mobile/*.iml
+mobile/app/*.iml
+mobile/captures/
+mobile/.externalNativeBuild/
+mobile/.cxx/
